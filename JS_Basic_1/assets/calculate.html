@@ -1,0 +1,80 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcualte Multiple and division</title>
+    <style>
+        /* Define a CSS class to change the color to blue */
+        .copied {
+            background-color: rgba(0, 0, 255, 0.5);
+            /* Adjust the alpha value as needed */
+        }
+    </style>
+</head>
+
+<body>
+
+    <label for="">1st Number:
+        <input type="number" name="1st" id="first">
+    </label>
+    <br> <br>
+    <label for="">2nd Number:
+        <input type="number" name="2nd" id="second">
+    </label>
+    <button onclick="Multiple()">Multiple</button>
+    <button onclick="Devide()">Devide</button>
+
+    <p>The Result is: <span id="result"></span></p>
+    <button onclick="showUrl()">Show the Url</button>
+    <h1>The url is : <span id="url"></span></h1>
+    <button onclick="copy()">COPY</button>
+
+
+    <script>
+        function Multiple() {
+            let a = document.getElementById("first").value;
+            let b = document.getElementById("second").value;
+            let result = a * b;
+            document.getElementById("result").innerText = result;
+        }
+        function Devide() {
+            let a = document.getElementById("first").value;
+            let b = document.getElementById("second").value;
+            let result = a / b;
+            document.getElementById("result").innerText = result;
+        }
+
+        function showUrl() {
+            const URLshow = document.URL;
+            document.getElementById("url").innerText = URLshow;
+        }
+
+        function copy() {
+            const textToCopy = document.getElementById("url").innerText;
+            const textArea = document.createElement('textarea');
+            textArea.value = textToCopy;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+
+            document.getElementById("url").classList.add('copied');
+        }
+        // function copy() {
+        //     const URLshow = document.URL;
+        //     const textArea = document.createElement('textarea');
+        //     textArea.value = URLshow;
+        //     document.body.appendChild(textArea);
+        //     textArea.select();
+        //     document.execCommand('copy');
+        //     document.body.removeChild(textArea);
+        // }
+
+    </script>
+
+
+
+</body>
+
+</html>
