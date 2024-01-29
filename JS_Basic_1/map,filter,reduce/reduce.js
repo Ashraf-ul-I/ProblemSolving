@@ -47,3 +47,4 @@ const fName = users.reduce((acc, curr) => {
 }, []);
 
 console.log(fName);
+
